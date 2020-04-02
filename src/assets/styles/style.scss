@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,700;1,500;1,700&display=swap');
 :root {
-  --color-main: #009FCE;
+  --color-main: #009fce;
   --color-dark: #212121;
   --color-white: #fff;
 }
@@ -32,5 +32,25 @@ body {
   min-height: 100vh;
   margin: 0 auto;
   display: flex;
+  padding: 2rem;
+
+  flex-direction: column;
   align-items: center;
+
+  // @media screen and (max-width: 120rem) {
+  //   & {
+  //     padding: 1rem;
+  //   }
+  // }
+}
+
+
+.title {
+  margin-top: 10rem;
+}
+.sup-title {
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--color-white);
+  margin-bottom: 2rem;
 }

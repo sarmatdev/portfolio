@@ -4,13 +4,10 @@
       <g-image src="~/assets/images/srmt.svg" class="nav__logo"> </g-image>
       <ul class="nav__links" :class="{ active: menu }">
         <li class="nav__item">
-          <a href="#">About</a>
+          <a @click="hideMenu" v-scroll-to="'#about'">About</a>
         </li>
         <li class="nav__item">
-          <a href="#">Portfolio</a>
-        </li>
-        <li class="nav__item">
-          <a href="#">Contact</a>
+          <a @click="hideMenu" v-scroll-to="'#portfolio'">Portfolio</a>
         </li>
       </ul>
       <div @click="showMenu" class="burger" :class="{ toggle: toggle }">
@@ -32,6 +29,10 @@ export default {
   },
   methods: {
     showMenu() {
+      this.menu = !this.menu;
+      this.toggle = !this.toggle;
+    },
+    hideMenu() {
       this.menu = !this.menu;
       this.toggle = !this.toggle;
     }
@@ -64,14 +65,8 @@ export default {
 
     &__links {
       display: flex;
-      justify-content: space-around;
-      width: 30%;
-    }
-
-    @media screen and (max-width: 1024px) {
-      &__links {
-        width: 40%;
-      }
+      align-items: center;
+      margin-right: 2rem;
     }
 
     &__item {
@@ -81,6 +76,7 @@ export default {
       a {
         text-decoration: none;
         color: var(--color-white);
+        cursor: pointer;
         font-weight: 400;
         font-size: 1.4rem;
         text-transform: uppercase;
