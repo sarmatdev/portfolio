@@ -4,8 +4,8 @@
       <h1 class="title">About me</h1>
       <h2 class="sup-title">If you’re wondering who I am…</h2>
       <p class="paragraph">
-        I am <span class="highlight">Sarmat</span>, 20 years old self-taught
-        <span class="highlight">Front-end developer</span>.
+        I am <span class="highlight">Sarmat</span>, {{ age }} years old
+        self-taught <span class="highlight">Front-end developer</span>.
       </p>
 
       <p class="paragraph">
@@ -48,7 +48,15 @@
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    age() {
+      const diff_ms = Date.now() - new Date(2000, 12, 5).getTime();
+      const age_dt = new Date(diff_ms);
+      return Math.abs(age_dt.getUTCFullYear() - 1970);
+    }
+  }
+};
 </script>
 
 <style lang="scss">
