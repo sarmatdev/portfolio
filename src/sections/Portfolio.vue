@@ -13,7 +13,7 @@
         <main>
           <g-image class="project__img" :src="edge.node.image"> </g-image>
           <div class="project__description">
-            <p class="project__content" v-html="edge.node.content"></p>
+            <div class="project__content" v-html="edge.node.content"></div>
             <p class="project__stack">{{ edge.node.stack }}</p>
             <Button title="live" :link="edge.node.live" />
             <Button title="source" :link="edge.node.source" />
@@ -35,7 +35,7 @@
         live
         source
         stack
-        image
+        image (width: 500, quality: 50)
       }
     }
   }
@@ -51,7 +51,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .project {
   margin-top: 10rem;
 

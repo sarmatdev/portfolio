@@ -27,11 +27,11 @@ export default {
   transition: all 0.1s ease;
 
   &:hover {
-    transform: translateY(-2px);
+    transform: translateY(-1px);
   }
 
   &:active {
-    transform: translateY(2px);
+    transform: translateY(1px);
   }
 
   &__link {
