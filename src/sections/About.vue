@@ -44,11 +44,24 @@
         VUE-ROUTER • NUXT • GRIDSOME
       </p>
     </div>
+    <Button title="resume" :link="`${$static.metadata.siteUrl}resume.pdf`" />
   </Layout>
 </template>
 
+<static-query>
+query {
+  metadata {
+    siteUrl
+  }
+}
+</static-query>
+
 <script>
+import Button from '~/components/Button';
 export default {
+  components: {
+    Button
+  },
   computed: {
     age() {
       const diff_ms = Date.now() - new Date(2000, 12, 5).getTime();

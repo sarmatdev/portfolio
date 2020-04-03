@@ -6,6 +6,7 @@
 
 module.exports = {
   siteName: 'Sarmat | Front-end Developer',
+  siteUrl: 'https://www.sarmat.dev/',
   plugins: [
     {
       use: '@gridsome/source-filesystem',
