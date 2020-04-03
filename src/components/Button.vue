@@ -1,9 +1,7 @@
 <template>
-  <button class="button">
-    <a :href="link" target="_blank" class="button__link">
-      {{ title }}
-    </a>
-  </button>
+  <a :href="link" target="_blank" class="button">
+    {{ title }}
+  </a>
 </template>
 
 <script>
@@ -17,14 +15,21 @@ export default {
   margin-top: 2rem;
   padding: 1rem 2rem;
   margin-right: 1rem;
-  appearance: none;
+  display: flex;
   width: 10rem;
+  justify-content: center;
+  align-items: center;
   border: none;
   outline: none;
   cursor: pointer;
   background-color: var(--color-main);
+  color: var(--color-white);
   border-radius: 2rem;
   transition: all 0.1s ease;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 500;
 
   &:hover {
     transform: translateY(-1px);
@@ -32,15 +37,6 @@ export default {
 
   &:active {
     transform: translateY(1px);
-  }
-
-  &__link {
-    font-size: 1.2rem;
-    font-weight: 500;
-    letter-spacing: 2px;
-    text-decoration: none;
-    color: var(--color-white);
-    text-transform: uppercase;
   }
 }
 </style>

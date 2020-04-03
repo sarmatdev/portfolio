@@ -15,8 +15,10 @@
           <div class="project__description">
             <div class="project__content" v-html="edge.node.content"></div>
             <p class="project__stack">{{ edge.node.stack }}</p>
-            <Button title="live" :link="edge.node.live" />
-            <Button title="source" :link="edge.node.source" />
+            <div class="project__links">
+              <Button title="live" :link="edge.node.live" />
+              <Button title="source" :link="edge.node.source" />
+            </div>
           </div>
         </main>
       </div>
@@ -71,7 +73,7 @@ export default {
     max-width: 50rem;
     border-radius: 0.5rem;
     margin: 3rem;
-    box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.75);
 
     @media screen and (max-width: 30rem) {
       width: 30rem;
@@ -101,6 +103,11 @@ export default {
   &__stack {
     font-weight: 500;
     font-size: 2rem;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
   }
 }
 </style>
